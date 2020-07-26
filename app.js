@@ -1,7 +1,7 @@
-const manager = require("./lib/Manager");
+const Manager = require("./lib/Manager");
 const engineer = require("./lib/Engineer");
 const intern = require("./lib/Intern");
-const employee = require("./lib/Employee");
+const Employee = require("./lib/Employee");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -163,7 +163,8 @@ let next =
                 if (result.choice === 'Generate HTML') {
                     console.log("generating")
                     console.log(employeeResponse)
-                    render(employee)
+                    const employees = employeeResponse
+                    render(employees)
                     //}
                 }
             })
@@ -203,8 +204,8 @@ let next =
                         const id = employeeResponse[0].id;
                         const email = employeeResponse[0].email;
                         const role = employeeResponse[0].role;
-                        const employeeNew = new employee(name, id, email, role)
-                        console.log(employee)
+                        const employeeNew = new Employee(name, id, email, role)
+                        console.log(Employee)
                         console.log(employeeNew)
                         classdir()
                     };
@@ -241,7 +242,7 @@ let next =
                             const role = employeeResponse[0].role;
                             const officeNumber = employeeResponse[0].officeNumber;
 
-                            const managerNew = new manager(name, id, email, officeNumber)
+                            const managerNew = new Manager(name, id, email, officeNumber)
                             managerInfoN.push(managerNew);
                             console.log("231")
 
