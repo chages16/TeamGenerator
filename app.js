@@ -163,7 +163,7 @@ let next =
                 if (result.choice === 'Generate HTML') {
                     console.log("generating")
                     console.log(employeeResponse)
-                    render()
+                    render(employee)
                     //}
                 }
             })
@@ -235,11 +235,11 @@ let next =
                             }
                             employeeQ[0].officeNumber = managerAns.officeNumber;
 
-                            const name = employeeResp[0].name;
-                            const id = employeeQ[0].id;
-                            const email = employeeQ[0].email;
-                            const role = employeeQ[0].role;
-                            const officeNumber = employeeQ[0].officeNumber;
+                            const name = employeeResponse[0].name;
+                            const id = employeeResponse[0].id;
+                            const email = employeeResponse[0].email;
+                            const role = employeeResponse[0].role;
+                            const officeNumber = employeeResponse[0].officeNumber;
 
                             const managerNew = new manager(name, id, email, officeNumber)
                             managerInfoN.push(managerNew);
